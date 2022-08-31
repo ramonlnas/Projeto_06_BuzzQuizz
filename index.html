@@ -17,17 +17,83 @@
         <div class="canvas2">
 
         </div>
-        <div class="canvas3">
-            <h1>Comece pelo começo</h1>
-            <div class="quadro-quizz">
-                <input type="text" placeholder="Título do seu quizz" /> 
-                <input type="text" placeholder="URL da imagem do seu quizz" /> 
-                <input type="text" placeholder="Quantidade de perguntas do seu quizz" /> 
-                <input type="text" placeholder="Quantidade de níveis do quizz" /> 
+        <div class="canvas3 escondido">
+
+            <!--Tela 1-->
+            <div class="tela-inicial escondido">
+                <h1>Comece pelo começo</h1>
+                <div class="quadro-quizz">
+                    <input type="text" placeholder="Título do seu quizz" /> 
+                    <input type="text" placeholder="URL da imagem do seu quizz" /> 
+                    <input type="text" placeholder="Quantidade de perguntas do seu quizz" /> 
+                    <input type="text" placeholder="Quantidade de níveis do quizz" /> 
+                </div>
+
+                <button onclick="">Prosseguir pra criar perguntas</button>
             </div>
 
-            <button>Prosseguir pra criar perguntas</button>
+            <!--Tela 2-->
+            <div class="tela-perguntas escondido">
+                <h1>Crie suas perguntas</h1>
+
+            
+                <div class="pergunta-compacta escondido">
+                    <div class="pergunta-compactada-1">
+                        <h2>Pergunta 1</h2>
+                        <ion-icon name="open-outline"></ion-icon>
+                    </div>
+
+                    <div class="pergunta-compactada-1">
+                        <h2>Pergunta 2</h2>
+                        <ion-icon name="open-outline"></ion-icon>
+                    </div>
+
+                    <div class="pergunta-compactada-1">
+                        <h2>Pergunta 3</h2>
+                        <ion-icon name="open-outline"></ion-icon>
+                    </div>
+
+                </div>
+
+            
+                <div class="quadro-perguntas">
+                    <h2>Pergunta 1</h2>
+                    <div class="pergunta">
+                        
+                        <input type="text" placeholder="Texto da pergunta" /> 
+                        <input type="text" placeholder="Cor de fundo da pergunta" /> 
+
+                    </div>
+                    <h2>Resposta correta</h2>
+                    
+                    <div class="resposta-correta">
+                        
+                        <input type="text" placeholder="Resposta correta" /> 
+                        <input type="text" placeholder="URL da imagem" /> 
+
+                    </div>
+
+                    <h2>Respostas incorretas</h2>
+
+                    <div class="resposta-incorreta">
+                        
+                        <input type="text" placeholder="Resposta incorreta 1" /> 
+                        <input type="text" placeholder="URL da imagem 1" /> 
+                        <div class="divisor">
+                            <input type="text" placeholder="Resposta incorreta 2" /> 
+                            <input type="text" placeholder="URL da imagem 2" /> 
+                        </div>
+                        <input type="text" placeholder="Resposta incorreta 3" /> 
+                        <input type="text" placeholder="URL da imagem 3" /> 
+
+                    </div>
+
+                </div>
+            </div>
         </div>
     </main>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>

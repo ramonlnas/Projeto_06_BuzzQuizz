@@ -4,6 +4,11 @@
 *{
     box-sizing: border-box;
 }
+main {
+    background-color: #fafafa
+    
+
+}
 
 header {
     font: 700 37px 'Roboto', sans-serif;
@@ -15,15 +20,30 @@ header {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+input {
+    width: 564px;
+    height: 46px;
+    background: #FFFFFF;
+    border: 1px solid #D1D1D1;
+    border-radius: 5px;
+    padding: 13px 0 13px 23px;
+    margin-bottom: 9px;
+}
+
+
 .canvas3 {
+    font-family: 'Roboto';
+    height: 1200px;
+}
+
+.tela-inicial {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: 'Roboto';
-    display: none;
-
+    
 }
+
 .canvas3 h1 {
     font-weight: 700;
     font-size: 23px;
@@ -31,6 +51,7 @@ header {
     color: #000000;
     margin: 71px 0 27px 0;
 }
+
 .quadro-quizz {
     display: flex;
     flex-direction: column;
@@ -40,15 +61,8 @@ header {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
     padding: 20px;
 }
-.quadro-quizz input {
-    width: 564px;
-    height: 46px;
-    background: #FFFFFF;
-    border: 1px solid #D1D1D1;
-    border-radius: 5px;
-    padding: 13px 0 13px 23px;
-    margin-bottom: 9px;
-}
+
+
 .canvas3 button {
     background-color: #EC362D;
     border-radius: 15px;
@@ -57,5 +71,51 @@ header {
     font-family: 'Roboto';
     font-size: 21px;
     color: #FFF5F4;
-    margin-top: 85px;    
+    margin-top: 85px;  
+    margin-bottom: 435px;  
+}
+
+.pergunta-compactada-1 {
+    width: 600px;
+    height: 74px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 18px;
+    margin-bottom: 22px;
+}
+.pergunta-compactada-1 ion-icon {
+    width: 26px;
+    height: 26px;
+}
+
+.tela-perguntas, .pergunta, .resposta-correta, .resposta-incorreta, .divisor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.quadro-perguntas {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+}
+
+.canvas3 h2 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    color: #000000;
+    margin:15px 0 28px 0;
+}
+
+.divisor {
+    margin: 32px 0;
+
+}
+.escondido {
+    display: none;
 }
