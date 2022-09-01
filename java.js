@@ -18,3 +18,11 @@ function renderList (response) {
   }
   console.log(response.data)
 }
+
+function buttonCreate () {
+  const canvas1 = document.querySelector('.canvas1')
+  canvas1.classList.add('escondido')
+  const canvas3 = document.querySelector('.canvas3')
+  canvas3.classList.remove('escondido')
+
+}
