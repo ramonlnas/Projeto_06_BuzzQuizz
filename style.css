@@ -20,7 +20,7 @@ header {
 .canvas1 {
     margin: 0 auto;
     margin-top: 77px;
-    width: 1051px;
+    width: 1066px;
     height: 900px;
 }
 
@@ -56,6 +56,43 @@ header {
     transition: 0.3s;
 
 }
+
+.allQuizz {
+    margin-top: 77px;
+}
+
+.allQuizzs {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.allQuizz p {
+    font: 700 20px 'Roboto', sans-serif;
+    margin-bottom: 12px;
+}
+
+.quizz {
+    width: 340px;
+    height: 181px;
+    background-size: cover;
+    padding-top: 128px;
+    padding-bottom: 7px;
+    padding-left: 18px;
+    padding-right: 18px;
+    overflow: hidden;
+    border-radius: 5px;
+    margin-right: 15px;
+    margin-bottom: 12px;
+}
+
+.quizz p {
+    font: 400 19px 'Roboto', sans-serif;
+    color: #FFFFFF;
+    line-height: 22.2px;
+}
+
+
 /* ======== CANVAS 3 =======*/
 .canvas3 {
     display: flex;
