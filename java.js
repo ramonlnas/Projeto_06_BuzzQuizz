@@ -26,3 +26,15 @@ function buttonCreate () {
   canvas3.classList.remove('escondido')
 
 }
+
+
+
+
+/*============== CANVAS3 ================ */
+
+function proximaTela() {
+  const tela_inicial = document.querySelector('.tela-inicial')
+  tela_inicial.classList.add('escondido');
+  const tela_perguntas = document.querySelector('.tela-perguntas')
+  tela_perguntas.classList.remove('escondido')
+}

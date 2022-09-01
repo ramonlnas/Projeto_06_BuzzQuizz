@@ -11,7 +11,7 @@
   <body>
     <header>BuzzQuizz</header>
     <main>
-      <div class="canvas1">
+      <div class="canvas1 escondido">
         <div class="userQuizz">
           <p>Você não criou nenhum</p>
           <p>quizz ainda :(</p>
@@ -82,10 +82,10 @@
           </div>
         </div>
       </div>
-        <div class="canvas3 escondido">
+        <div class="canvas3">
 
-            <!--Tela 1-->
-            <div class="tela-inicial escondido">
+            <!--Tela 3.1-->
+            <div class="tela-inicial">
                 <h1>Comece pelo começo</h1>
                 <div class="quadro-quizz">
                     <input type="text" placeholder="Título do seu quizz" /> 
@@ -94,15 +94,17 @@
                     <input type="text" placeholder="Quantidade de níveis do quizz" /> 
                 </div>
 
-                <button onclick="">Prosseguir pra criar perguntas</button>
+                <button onclick="proximaTela()">Prosseguir pra criar perguntas</button>
             </div>
 
-            <!--Tela 2-->
+            <!--Tela 3.2-->
             <div class="tela-perguntas escondido">
-                <h1>Crie suas perguntas</h1>
+                
 
             
-                <div class="pergunta-compacta escondido">
+                <div class="pergunta-compacta">
+
+                    <h1>Crie suas perguntas</h1>
                     <div class="pergunta-compactada-1">
                         <h2>Pergunta 1</h2>
                         <ion-icon name="open-outline"></ion-icon>
@@ -118,29 +120,34 @@
                         <ion-icon name="open-outline"></ion-icon>
                     </div>
 
+                    <button onclick="proximaTela()">Prosseguir pra criar Níveis</button>
+
                 </div>
 
             
-                <div class="quadro-perguntas">
-                    <h2>Pergunta 1</h2>
+                <div class="quadro-perguntas escondido">
+                    
                     <div class="pergunta">
+                        <h2>Pergunta 1</h2>
                         
                         <input type="text" placeholder="Texto da pergunta" /> 
                         <input type="text" placeholder="Cor de fundo da pergunta" /> 
 
                     </div>
-                    <h2>Resposta correta</h2>
+                    
                     
                     <div class="resposta-correta">
+                        <h2>Resposta correta</h2>
                         
                         <input type="text" placeholder="Resposta correta" /> 
                         <input type="text" placeholder="URL da imagem" /> 
 
                     </div>
 
-                    <h2>Respostas incorretas</h2>
+                    
 
                     <div class="resposta-incorreta">
+                        <h2>Respostas incorretas</h2>
                         
                         <input type="text" placeholder="Resposta incorreta 1" /> 
                         <input type="text" placeholder="URL da imagem 1" /> 
@@ -153,8 +160,96 @@
 
                     </div>
 
+                    <button onclick="proximaTela()">Prosseguir pra criar Níveis</button>
+
+
                 </div>
             </div>
+
+            <!--TELA 3.3-->
+
+            <div class="tela-niveis escondido">
+                <h1>Agora, decida os níveis</h1>
+
+                <div class="nivel-compactado escondido">
+
+                    <div class="pergunta-compactada-1">
+                        <h2>Nível 1</h2>
+                        <ion-icon name="open-outline"></ion-icon>
+                    </div>
+
+                    <div class="pergunta-compactada-1">
+                        <h2>Nível 2</h2>
+                        <ion-icon name="open-outline"></ion-icon>
+                    </div>
+
+                    <div class="pergunta-compactada-1">
+                        <h2>Nível 3</h2>
+                        <ion-icon name="open-outline"></ion-icon>
+                    </div>
+
+                    <button onclick="proximaTela()">Finalizar Quizz</button>
+                </div>
+
+                <div class="quadro-niveis escondido">
+
+                    
+                    <div class="niveis">
+                        <h2>Nível 1</h2>
+                        <input type="text" placeholder="Título do nível" /> 
+                        <input type="text" placeholder="% de acerto mínima" /> 
+                        <input type="text" placeholder="URL da imagem do nível" /> 
+                        <input type="text" placeholder="Descrição do nível" /> 
+
+
+                    </div>
+
+                    
+                    <div class="niveis">
+                        <h2>Nível 2</h2>
+                        <input type="text" placeholder="Título do nível" /> 
+                        <input type="text" placeholder="% de acerto mínima" /> 
+                        <input type="text" placeholder="URL da imagem do nível" /> 
+                        <input type="text" placeholder="Descrição do nível" /> 
+
+
+                    </div>
+                    
+                    
+                    <div class="niveis">
+                        <h2>Nível 3</h2>
+                        <input type="text" placeholder="Título do nível" /> 
+                        <input type="text" placeholder="% de acerto mínima" /> 
+                        <input type="text" placeholder="URL da imagem do nível" /> 
+                        <input type="text" placeholder="Descrição do nível" /> 
+
+
+                    </div>
+
+                    <button onclick="proximaTela()">Finalizar Quizz</button>
+                    
+                    
+                    
+                </div>
+            </div>
+
+            <div class="tela-final escondido">
+                <h1>Seu Quizz está pronto!</h1>
+
+                <div class="quadro-final">
+                    <div class="img-final">
+                        <img class="img-relative" src="Rectangle 34.png" />
+                        <h3 class ="txt-final" >O quão Potterhead é você?</h3>
+                    </div>
+
+                    <button onclick="">Acessar Quizz</button>
+                    
+                    <p>Voltar para o home</p>
+                </div>
+
+            </div>
+
+
         </div>
     </main>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
