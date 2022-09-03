@@ -17,7 +17,7 @@ function renderList(response) {
     backGroundDiv.style.background = `linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%), url('${response.data[i].image}')`;
     backGroundDiv.style.backgroundSize = "cover";
   }
-  console.log(response.data[2]);
+  // console.log(response.data[2]);
 }
 
 function buttonCreate() {
@@ -42,11 +42,11 @@ function RequisitarQuizz() {
   const promise = axios.get(
     "https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/10080"
   );
-  promise.then(PrintarData);
+  promise.then(PrintarTitulo);
   promise.then(ListarPerguntas);
 }
 
-function PrintarData(resposta) {
+function PrintarTitulo(resposta) {
   const tituloquizz = document.querySelector(".header-quizz img");
   console.log(resposta.data);
   console.log(tituloquizz);
@@ -62,6 +62,45 @@ function ListarPerguntas(resposta) {
   console.log(resposta.data);
   let questoes = resposta.data.questions;
   console.log(questoes);
-  console.log(questoes[0].answers);
-  for (let i = 0; i < questoes.length; i++) {}
+  for (let i = 0; i < questoes.length; i++) {
+    const areasperguntas = document.querySelector(".canvas2");
+    let TemplatePergunta = `
+        <div class="perguntas-quizz question${i}">
+          <div class="controle">
+            <div class="pergunta">
+              <h1>${questoes[i].title}</h1>
+            </div>
+            <div class="respostas"></div>
+          </div>
+        </div>
+    `
+    areasperguntas.innerHTML += TemplatePergunta;
+    const mudarcor = document.querySelector(`.question${i} .controle .pergunta`);
+    mudarcor.style.backgroundColor = questoes[i].color;
+    let QuestoesRespostas = resposta.data.questions[i].answers;
+    console.log(QuestoesRespostas.length);
+    const arearesposta = document.querySelector(`.question${i} .controle .respostas`);
+    console.log(arearesposta);
+    for (let i = 0; i < QuestoesRespostas.length; i++){
+      let TemplateRespostas = `
+      <div>
+        <img
+        src="${QuestoesRespostas[i].image}"
+        alt="Imagem não carregou"
+        class="imgrespostas"
+        />
+        <span class="txtresposta">${QuestoesRespostas[i].text}</span>
+      </div>  
+      `
+       arearesposta.innerHTML += TemplateRespostas;
+    }
+    
+
+
+
+
+
+  }
 }
+
+RequisitarQuizz();
