@@ -148,7 +148,7 @@ main{
     padding-bottom: 86px;
 }
 
-.pergunta-quizz{
+.pergunta-quizz, .resultado-quizz{
     background-color: #ffffff;
     width: 759px;
     height: 640px;
