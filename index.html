@@ -15,25 +15,37 @@
         <div data-identifier="user-quizzes" class="userQuizz">
           <p>Você não criou nenhum</p>
           <p>quizz ainda :(</p>
-          <button data-identifier="create-quizz" onclick="buttonCreate()">Criar Quizz</button>
+          <button data-identifier="create-quizz" onclick="buttonCreate()">
+            Criar Quizz
+          </button>
         </div>
         <div data-identifier="general-quizzes" class="allQuizz">
           <p>Todos os Quizzes</p>
           <div class="allQuizzs">
             <div class="spinner">
-              <div class="loadingio-spinner-spinner-xm4ajdssgn8"><div class="ldio-g4dxxs0irlv">
-                <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                </div></div>
+              <div class="loadingio-spinner-spinner-xm4ajdssgn8">
+                <div class="ldio-g4dxxs0irlv">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div class="canvas2">
         <div class="header-quizz">
-          <img
-            src=""
-            alt="A imagem nao carregou"
-          />
+          <img src="" alt="A imagem nao carregou" />
           <h1>O quão potterhead vc é?</h1>
         </div>
         <div class="pergunta-quizz">
@@ -84,178 +96,156 @@
           </div>
         </div>
       </div>
-        <div class="canvas3 escondido">
+      <div class="canvas3 escondido">
+        <!--Tela 3.1-->
+        <div class="tela-inicial">
+          <h1>Comece pelo começo</h1>
+          <div class="quadro-quizz">
+            <input type="text" placeholder="Título do seu quizz" />
+            <input type="text" placeholder="URL da imagem do seu quizz" />
+            <input
+              type="text"
+              placeholder="Quantidade de perguntas do seu quizz"
+            />
+            <input type="text" placeholder="Quantidade de níveis do quizz" />
+          </div>
 
-            <!--Tela 3.1-->
-            <div class="tela-inicial">
-                <h1>Comece pelo começo</h1>
-                <div class="quadro-quizz">
-                    <input type="text" placeholder="Título do seu quizz" /> 
-                    <input type="text" placeholder="URL da imagem do seu quizz" /> 
-                    <input type="text" placeholder="Quantidade de perguntas do seu quizz" /> 
-                    <input type="text" placeholder="Quantidade de níveis do quizz" /> 
-                </div>
-
-                <button onclick="proximaTela()">Prosseguir pra criar perguntas</button>
-            </div>
-
-            <!--Tela 3.2-->
-            <div class="tela-perguntas escondido">
-                
-
-            
-                <div class="pergunta-compacta">
-
-                    <h1>Crie suas perguntas</h1>
-                    <div class="pergunta-compactada-1">
-                        <h2>Pergunta 1</h2>
-                        <ion-icon name="open-outline"></ion-icon>
-                    </div>
-
-                    <div class="pergunta-compactada-1">
-                        <h2>Pergunta 2</h2>
-                        <ion-icon name="open-outline"></ion-icon>
-                    </div>
-
-                    <div class="pergunta-compactada-1">
-                        <h2>Pergunta 3</h2>
-                        <ion-icon name="open-outline"></ion-icon>
-                    </div>
-
-                    <button onclick="proximaTela()">Prosseguir pra criar Níveis</button>
-
-                </div>
-
-            
-                <div class="quadro-perguntas escondido">
-                    
-                    <div class="pergunta">
-                        <h2>Pergunta 1</h2>
-                        
-                        <input type="text" placeholder="Texto da pergunta" /> 
-                        <input type="text" placeholder="Cor de fundo da pergunta" /> 
-
-                    </div>
-                    
-                    
-                    <div class="resposta-correta">
-                        <h2>Resposta correta</h2>
-                        
-                        <input type="text" placeholder="Resposta correta" /> 
-                        <input type="text" placeholder="URL da imagem" /> 
-
-                    </div>
-
-                    
-
-                    <div class="resposta-incorreta">
-                        <h2>Respostas incorretas</h2>
-                        
-                        <input type="text" placeholder="Resposta incorreta 1" /> 
-                        <input type="text" placeholder="URL da imagem 1" /> 
-                        <div class="divisor">
-                            <input type="text" placeholder="Resposta incorreta 2" /> 
-                            <input type="text" placeholder="URL da imagem 2" /> 
-                        </div>
-                        <input type="text" placeholder="Resposta incorreta 3" /> 
-                        <input type="text" placeholder="URL da imagem 3" /> 
-
-                    </div>
-
-                    <button onclick="proximaTela()">Prosseguir pra criar Níveis</button>
-
-
-                </div>
-            </div>
-
-            <!--TELA 3.3-->
-
-            <div class="tela-niveis escondido">
-                <h1>Agora, decida os níveis</h1>
-
-                <div class="nivel-compactado escondido">
-
-                    <div class="pergunta-compactada-1">
-                        <h2>Nível 1</h2>
-                        <ion-icon name="open-outline"></ion-icon>
-                    </div>
-
-                    <div class="pergunta-compactada-1">
-                        <h2>Nível 2</h2>
-                        <ion-icon name="open-outline"></ion-icon>
-                    </div>
-
-                    <div class="pergunta-compactada-1">
-                        <h2>Nível 3</h2>
-                        <ion-icon name="open-outline"></ion-icon>
-                    </div>
-
-                    <button onclick="proximaTela()">Finalizar Quizz</button>
-                </div>
-
-                <div class="quadro-niveis escondido">
-
-                    
-                    <div class="niveis">
-                        <h2>Nível 1</h2>
-                        <input type="text" placeholder="Título do nível" /> 
-                        <input type="text" placeholder="% de acerto mínima" /> 
-                        <input type="text" placeholder="URL da imagem do nível" /> 
-                        <input type="text" placeholder="Descrição do nível" /> 
-
-
-                    </div>
-
-                    
-                    <div class="niveis">
-                        <h2>Nível 2</h2>
-                        <input type="text" placeholder="Título do nível" /> 
-                        <input type="text" placeholder="% de acerto mínima" /> 
-                        <input type="text" placeholder="URL da imagem do nível" /> 
-                        <input type="text" placeholder="Descrição do nível" /> 
-
-
-                    </div>
-                    
-                    
-                    <div class="niveis">
-                        <h2>Nível 3</h2>
-                        <input type="text" placeholder="Título do nível" /> 
-                        <input type="text" placeholder="% de acerto mínima" /> 
-                        <input type="text" placeholder="URL da imagem do nível" /> 
-                        <input type="text" placeholder="Descrição do nível" /> 
-
-
-                    </div>
-
-                    <button onclick="proximaTela()">Finalizar Quizz</button>
-                    
-                    
-                    
-                </div>
-            </div>
-
-            <div class="tela-final escondido">
-                <h1>Seu Quizz está pronto!</h1>
-
-                <div class="quadro-final">
-                    <div class="img-final">
-                        <img class="img-relative" src="Rectangle 34.png" />
-                        <h3 class ="txt-final" >O quão Potterhead é você?</h3>
-                    </div>
-
-                    <button onclick="">Acessar Quizz</button>
-                    
-                    <p>Voltar para o home</p>
-                </div>
-
-            </div>
-
-
+          <button onclick="proximaTela()">
+            Prosseguir pra criar perguntas
+          </button>
         </div>
+
+        <!--Tela 3.2-->
+        <div class="tela-perguntas escondido">
+          <div class="pergunta-compacta">
+            <h1>Crie suas perguntas</h1>
+            <div class="pergunta-compactada-1">
+              <h2>Pergunta 1</h2>
+              <ion-icon name="open-outline"></ion-icon>
+            </div>
+
+            <div class="pergunta-compactada-1">
+              <h2>Pergunta 2</h2>
+              <ion-icon name="open-outline"></ion-icon>
+            </div>
+
+            <div class="pergunta-compactada-1">
+              <h2>Pergunta 3</h2>
+              <ion-icon name="open-outline"></ion-icon>
+            </div>
+
+            <button onclick="proximaTela()">Prosseguir pra criar Níveis</button>
+          </div>
+
+          <div class="quadro-perguntas escondido">
+            <div class="pergunta">
+              <h2>Pergunta 1</h2>
+
+              <input type="text" placeholder="Texto da pergunta" />
+              <input type="text" placeholder="Cor de fundo da pergunta" />
+            </div>
+
+            <div class="resposta-correta">
+              <h2>Resposta correta</h2>
+
+              <input type="text" placeholder="Resposta correta" />
+              <input type="text" placeholder="URL da imagem" />
+            </div>
+
+            <div class="resposta-incorreta">
+              <h2>Respostas incorretas</h2>
+
+              <input type="text" placeholder="Resposta incorreta 1" />
+              <input type="text" placeholder="URL da imagem 1" />
+              <div class="divisor">
+                <input type="text" placeholder="Resposta incorreta 2" />
+                <input type="text" placeholder="URL da imagem 2" />
+              </div>
+              <input type="text" placeholder="Resposta incorreta 3" />
+              <input type="text" placeholder="URL da imagem 3" />
+            </div>
+
+            <button onclick="proximaTela()">Prosseguir pra criar Níveis</button>
+          </div>
+        </div>
+
+        <!--TELA 3.3-->
+
+        <div class="tela-niveis escondido">
+          <h1>Agora, decida os níveis</h1>
+
+          <div class="nivel-compactado escondido">
+            <div class="pergunta-compactada-1">
+              <h2>Nível 1</h2>
+              <ion-icon name="open-outline"></ion-icon>
+            </div>
+
+            <div class="pergunta-compactada-1">
+              <h2>Nível 2</h2>
+              <ion-icon name="open-outline"></ion-icon>
+            </div>
+
+            <div class="pergunta-compactada-1">
+              <h2>Nível 3</h2>
+              <ion-icon name="open-outline"></ion-icon>
+            </div>
+
+            <button onclick="proximaTela()">Finalizar Quizz</button>
+          </div>
+
+          <div class="quadro-niveis escondido">
+            <div class="niveis">
+              <h2>Nível 1</h2>
+              <input type="text" placeholder="Título do nível" />
+              <input type="text" placeholder="% de acerto mínima" />
+              <input type="text" placeholder="URL da imagem do nível" />
+              <input type="text" placeholder="Descrição do nível" />
+            </div>
+
+            <div class="niveis">
+              <h2>Nível 2</h2>
+              <input type="text" placeholder="Título do nível" />
+              <input type="text" placeholder="% de acerto mínima" />
+              <input type="text" placeholder="URL da imagem do nível" />
+              <input type="text" placeholder="Descrição do nível" />
+            </div>
+
+            <div class="niveis">
+              <h2>Nível 3</h2>
+              <input type="text" placeholder="Título do nível" />
+              <input type="text" placeholder="% de acerto mínima" />
+              <input type="text" placeholder="URL da imagem do nível" />
+              <input type="text" placeholder="Descrição do nível" />
+            </div>
+
+            <button onclick="proximaTela()">Finalizar Quizz</button>
+          </div>
+        </div>
+
+        <div class="tela-final escondido">
+          <h1>Seu Quizz está pronto!</h1>
+
+          <div class="quadro-final">
+            <div class="img-final">
+              <img class="img-relative" src="Rectangle 34.png" />
+              <h3 class="txt-final">O quão Potterhead é você?</h3>
+            </div>
+
+            <button onclick="">Acessar Quizz</button>
+
+            <p>Voltar para o home</p>
+          </div>
+        </div>
+      </div>
     </main>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./java.js"></script>
   </body>
