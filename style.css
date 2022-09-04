@@ -290,6 +290,14 @@ main{
     width: 330px;
 }
 
+.selecionado{
+    color: green;   
+}
+
+.branco{
+    filter: opacity(50%);
+}
+
 
 /* ======== CANVAS 3 =======*/
 

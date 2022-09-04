@@ -78,12 +78,13 @@ function ListarPerguntas(resposta) {
     const mudarcor = document.querySelector(`.question${i} .controle .pergunta`);
     mudarcor.style.backgroundColor = questoes[i].color;
     let QuestoesRespostas = resposta.data.questions[i].answers;
-    console.log(QuestoesRespostas.length);
+    QuestoesRespostas.sort(comparador);
+    console.log(QuestoesRespostas);
     const arearesposta = document.querySelector(`.question${i} .controle .respostas`);
     console.log(arearesposta);
     for (let i = 0; i < QuestoesRespostas.length; i++){
       let TemplateRespostas = `
-      <div>
+      <div class="resposta${i}" onclick="Verificar(this)">
         <img
         src="${QuestoesRespostas[i].image}"
         alt="Imagem não carregou"
@@ -94,13 +95,34 @@ function ListarPerguntas(resposta) {
       `
        arearesposta.innerHTML += TemplateRespostas;
     }
-    
-
-
-
-
-
   }
 }
 
+function comparador() { 
+	return Math.random() - 0.5; 
+}
+
+function Verificar(elemento){
+  console.log(elemento);
+  console.log(elemento.closest("div div"));
+  const teste = elemento.parentNode.parentNode.parentNode;
+  const teste3 = teste.children;
+  console.log(teste3);
+  console.log(teste);
+  const teste2 = elemento.parentNode.children;
+  // let tentativa = document.querySelector(elemento.parentNode.children);
+  // console.log(tentativa);
+  // teste2.classList.add("branco");
+  console.log(teste2);
+  let controlador = teste3.classList.item[0];
+  console.log(controlador);
+  for(let i = 0; i < teste2.length; i++){
+    const divis = document.querySelector(`.resposta${i}`);
+    divis.classList.remove(`resposta${i}`)
+    console.log(divis);
+    divis.classList.add("branco");
+  }
+  elemento.classList.add("selecionado");
+  elemento.classList.remove("branco");
+}
 RequisitarQuizz();
