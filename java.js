@@ -9,7 +9,7 @@ function renderList(response) {
   const divQuizz = document.querySelector(".allQuizzs");
   divQuizz.innerHTML = "";
   for (let i = 0; response.data.length > i; i++) {
-    let newQuizz = `<div data-identifier="quizz-card" class="quizz quizz${i}">
+    let newQuizz = `<div onclick="RequisitarQuizz(${response.data[i].id})" data-identifier="quizz-card" class="quizz quizz${i}">
     <p>${response.data[i].title}</p>
     </div>`;
     divQuizz.innerHTML = divQuizz.innerHTML + newQuizz;
@@ -17,7 +17,6 @@ function renderList(response) {
     backGroundDiv.style.background = `linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%), url('${response.data[i].image}')`;
     backGroundDiv.style.backgroundSize = "cover";
   }
-  // console.log(response.data[2]);
 }
 
 function buttonCreate() {
@@ -38,12 +37,16 @@ function proximaTela() {
 
 /*============== CANVAS2 ================ */
 
-function RequisitarQuizz() {
+function RequisitarQuizz(idd) {
   const promise = axios.get(
-    "https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/10080"
+    `https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/${idd}`
   );
   promise.then(PrintarTitulo);
   promise.then(ListarPerguntas);
+  const canvas1 = document.querySelector(".canvas1");
+  canvas1.classList.add("escondido");
+  const canvas2 = document.querySelector(".canvas2");
+  canvas2.classList.remove("escondido");
 }
 
 function PrintarTitulo(resposta) {
@@ -73,16 +76,20 @@ function ListarPerguntas(resposta) {
             <div class="respostas"></div>
           </div>
         </div>
-    `
+    `;
     areasperguntas.innerHTML += TemplatePergunta;
-    const mudarcor = document.querySelector(`.question${i} .controle .pergunta`);
+    const mudarcor = document.querySelector(
+      `.question${i} .controle .pergunta`
+    );
     mudarcor.style.backgroundColor = questoes[i].color;
     let QuestoesRespostas = resposta.data.questions[i].answers;
     QuestoesRespostas.sort(comparador);
     console.log(QuestoesRespostas);
-    const arearesposta = document.querySelector(`.question${i} .controle .respostas`);
+    const arearesposta = document.querySelector(
+      `.question${i} .controle .respostas`
+    );
     console.log(arearesposta);
-    for (let i = 0; i < QuestoesRespostas.length; i++){
+    for (let i = 0; i < QuestoesRespostas.length; i++) {
       let TemplateRespostas = `
       <div class="resposta${i}" onclick="Verificar(this)">
         <img
@@ -92,17 +99,17 @@ function ListarPerguntas(resposta) {
         />
         <span class="txtresposta">${QuestoesRespostas[i].text}</span>
       </div>  
-      `
-       arearesposta.innerHTML += TemplateRespostas;
+      `;
+      arearesposta.innerHTML += TemplateRespostas;
     }
   }
 }
 
-function comparador() { 
-	return Math.random() - 0.5; 
+function comparador() {
+  return Math.random() - 0.5;
 }
 
-function Verificar(elemento){
+function Verificar(elemento) {
   console.log(elemento);
   console.log(elemento.closest("div div"));
   const teste = elemento.parentNode.parentNode.parentNode;
@@ -116,9 +123,9 @@ function Verificar(elemento){
   console.log(teste2);
   let controlador = teste3.classList.item[0];
   console.log(controlador);
-  for(let i = 0; i < teste2.length; i++){
+  for (let i = 0; i < teste2.length; i++) {
     const divis = document.querySelector(`.resposta${i}`);
-    divis.classList.remove(`resposta${i}`)
+    divis.classList.remove(`resposta${i}`);
     console.log(divis);
     divis.classList.add("branco");
   }
