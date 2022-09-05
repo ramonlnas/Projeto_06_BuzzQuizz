@@ -357,6 +357,8 @@ promise.then(PrintarTitulo);
 promise.then(ListarPerguntas);
 const canvas1 = document.querySelector(".canvas1");
 canvas1.classList.add("escondido");
+const canvas3 = document.querySelector(".canvas3");
+canvas3.classList.add("escondido");
 const canvas2 = document.querySelector(".canvas2");
 canvas2.classList.remove("escondido");
 id = idd;
