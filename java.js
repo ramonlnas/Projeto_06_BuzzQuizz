@@ -5,9 +5,9 @@ function renderUserList (response) {
   let zizyz = 0
   const userQuizzReal = document.querySelector('.userQuizzRealReal')
   userQuizzReal.innerHTML = ""
-  console.log(listIdsQuizz)
+  console.log(listaIds)
   for (let i = 0; response.data.length > i; i++) {
-    if( listIdsQuizz[0].includes(response.data[i].id)){
+    if( listaIds.includes(response.data[i].id)){
 
       let newQuizz = `<div onclick="RequisitarQuizz(${response.data[i].id})" data-identifier="quizz-card" class="quizz quizz${i}">
       <p>${response.data[i].title}</p>
@@ -323,19 +323,20 @@ const promissseQuiz = axios.post('https://mock-api.driven.com.br/api/v4/buzzquiz
 promissseQuiz.then(console.log(promissseQuiz))
 promissseQuiz.then(armazenarId)
 }
-const listIdsQuizz = []
+
+
 
 function armazenarId (respotaid){
-listIdsQuizz.push(respotaid.data.id)
-console.log(listIdsQuizz)
-const listIdsSerializado = JSON.stringify(listIdsQuizz); // Array convertida pra uma string
+  listaIds.push(respotaid.data.id)
+  console.log(listaIds)
+  const listIdsSerializado = JSON.stringify(listaIds); // Array convertida pra uma string
 
-localStorage.setItem("lista", listIdsSerializado);
+  localStorage.setItem("lista", listIdsSerializado);
 }
 const listIdsSerializadooo = localStorage.getItem("lista"); // Pegando de volta a string armazenada na chave "lista"
 
 const listaIds = JSON.parse(listIdsSerializadooo)
-listIdsQuizz.push(listaIds)
+
  
 
 
@@ -350,17 +351,19 @@ let id;
 let proximadiv = 1;
 
 function RequisitarQuizz(idd) {
-const promise = axios.get(
-  `https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/${idd}`
-);
-promise.then(PrintarTitulo);
-promise.then(ListarPerguntas);
-const canvas1 = document.querySelector(".canvas1");
-canvas1.classList.add("escondido");
-const canvas2 = document.querySelector(".canvas2");
-canvas2.classList.remove("escondido");
-id = idd;
-}
+  const promise = axios.get(
+    `https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/${idd}`
+  );
+  promise.then(PrintarTitulo);
+  promise.then(ListarPerguntas);
+  const canvas1 = document.querySelector(".canvas1");
+  canvas1.classList.add("escondido");
+  const canvas3 = document.querySelector(".canvas3");
+  canvas3.classList.add("escondido");
+  const canvas2 = document.querySelector(".canvas2");
+  canvas2.classList.remove("escondido");
+  id = idd;
+  }
 
 function PrintarTitulo(resposta) {
 const tela2 = document.querySelector(".canvas2");
