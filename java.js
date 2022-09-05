@@ -1,8 +1,8 @@
 /*========Canvas1 ===========*/
 const listIdsSerializadooo = localStorage.getItem("lista"); // Pegando de volta a string armazenada na chave "lista"
-
+const listIdsQuizz = []
 const listaIds = JSON.parse(listIdsSerializadooo)
-const listIdsQuizz = listaIds
+listIdsQuizz = listaIds
 
 /* ===== list user quizz ===*/
 function renderUserList (response) {
