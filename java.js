@@ -351,19 +351,17 @@ let id;
 let proximadiv = 1;
 
 function RequisitarQuizz(idd) {
-  const promise = axios.get(
-    `https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/${idd}`
-  );
-  promise.then(PrintarTitulo);
-  promise.then(ListarPerguntas);
-  const canvas1 = document.querySelector(".canvas1");
-  canvas1.classList.add("escondido");
-  const canvas3 = document.querySelector(".canvas3");
-  canvas3.classList.add("escondido");
-  const canvas2 = document.querySelector(".canvas2");
-  canvas2.classList.remove("escondido");
-  id = idd;
-  }
+const promise = axios.get(
+  `https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/${idd}`
+);
+promise.then(PrintarTitulo);
+promise.then(ListarPerguntas);
+const canvas1 = document.querySelector(".canvas1");
+canvas1.classList.add("escondido");
+const canvas2 = document.querySelector(".canvas2");
+canvas2.classList.remove("escondido");
+id = idd;
+}
 
 function PrintarTitulo(resposta) {
 const tela2 = document.querySelector(".canvas2");
