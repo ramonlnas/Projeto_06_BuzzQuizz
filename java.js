@@ -59,7 +59,7 @@ tela3_1()
 let quizzTitulo;
 let quizzIMG;
 let quizzPergunta;
-let quizzNivel
+let quizzNivel = []
 const quizzQuestions = []
 
 
@@ -69,6 +69,9 @@ function proximaTela() {
   tela_inicial.classList.add('escondido');
   const tela_perguntas = document.querySelector('.tela-perguntas')
   tela_perguntas.classList.remove('escondido')
+}
+
+function proximaTela1() {
   tela3_2()
 }
 let xiss = 0
@@ -106,16 +109,16 @@ function tela3_1 () {
 
 }
 function valoresTela3_1 () {
-  quizzTitulo = document.querySelector('.quadro-quizz div:nth-child(1) input').value; 
-  quizzIMG = document.querySelector('.quadro-quizz div:nth-child(2) input').value;
-  quizzPergunta = document.querySelector('.quadro-quizz div:nth-child(3) input').value;
-  quizzNivel = document.querySelector('.quadro-quizz div:nth-child(4) input').value;
+quizzTitulo = document.querySelector('.quadro-quizz div:nth-child(1) input').value; 
+quizzIMG = document.querySelector('.quadro-quizz div:nth-child(2) input').value;
+quizzPergunta = document.querySelector('.quadro-quizz div:nth-child(3) input').value;
+quizzNivel = document.querySelector('.quadro-quizz div:nth-child(4) input').value;
 
-  if(quizzTitulo.length < 20 || quizzTitulo > 65 || quizzPergunta < 3 || quizzNivel < 2) {
-    alert('Por favor, preencha os dados de acordo com os requisitos')
-  }else {
-    tela3_2();
-  }
+if(quizzTitulo.length < 20 || quizzTitulo.lenght > 65 || quizzPergunta.length < 3 || quizzNivel.length < 2) {
+  alert('Por favor, preencha os dados de acordo com os requisitos')
+}else {
+  tela3_2();
+}
 }
 
 function tela3_2 () {
@@ -123,7 +126,6 @@ function tela3_2 () {
   elemento.innerHTML = `
   <h1>Crie suas perguntas</h1>
   `
-
   for(let i = 0; i < quizzPergunta; i++) {
     let renderizaPergunta = `
     <div onclick="openQuestion('question${i}', this)" class="pergunta-compactada-1">
@@ -163,6 +165,10 @@ function tela3_2 () {
     `;
     elemento.innerHTML += renderizaPergunta;
   }
+  <button onclick="proximaTela1()">Prosseguir pra criar Níveis</button>
+}
+
+function valoresTela3_2() {
   elemento.innerHTML += `<button onclick="proximaTela1()">Prosseguir pra criar Níveis</button>`
 }
 
@@ -189,6 +195,9 @@ function valoresTela3_2() {
     let incorretaURL2 = elemento[i].querySelector('.incorretaURL2 input').value;
     let incorretaResposta3 = elemento[i].querySelector('.incorretaResposta3 input').value;
     let incorretaURL3 = elemento[i].querySelector('.incorretaURL3 input').value;
+
+    console.log(i)
+    if(txtPergunta.lenght < 20 || corretaResposta.lenght < 1 || incorretaResposta1.lenght < 1){
     if(txtPergunta.length > 20 || corretaResposta.length < 0 || incorretaResposta1.length < 0){
       alert('Preencha corretamente os requisitos')
       break;
@@ -296,6 +305,78 @@ function valoresTela3_2() {
   console.log(quizzQuestions)
   
 }
+function tela3_3() {
+  const elemento = document.querySelectorAll('.tela-niveis')
+  elemento.innerHTML = `
+  <h1>Agora, decida os níveis</h1>
+  `;
+
+  for(i = 0; i < quizzNivel.length; i++) {
+    let renderizaNivel = `
+    <div onclick="openQuestion('question${i}', this)" class="pergunta-compactada-1">
+      <div><h2>Nível ${i+1}</h2></div>
+      <div><ion-icon name="open-outline"></ion-icon></div>
+    </div>
+    
+    <div class="quadro-niveis escondido questions${i}">
+      <div class = "diferenciar-nivel ${i + 1} ">          
+        <div class="niveis">
+            <h2>Nível ${i + 1}</h2>
+            <div class="nvTitulo"><input type="text"  minlength="10" placeholder="Título do nível" /> </div>
+            <div class="%minima"><input type="text"  maxlength="100" placeholder="% de acerto mínima" /> </div>
+            <div class="nvURL"><input type="url" placeholder="URL da imagem do nível" /> </div>
+            <div class="nvDes"><input type="text" placeholder="Descrição do nível" /> </div>
+
+        </div>
+    </div>
+    <button onclick="proximaTela2()">Finalizar Quizz</button>
+    
+</div>
+
+      
+    `;
+    elemento += renderizaNivel;
+  }
+}
+function valoresTela3_3() {
+  let elemento = document.querySelectorAll('.quadro-niveis')
+  let QuizzNivel
+  for(let i = 0; i < elemento.length; i++) {
+    let nvTitulo = elemento[i].querySelector('.nvTitulo input').value
+    let porcmin = elemento[i].querySelector('.%minima input').value
+    let nvURL = elemento[i].querySelector('.nvURL input').value
+    let nvDes = elemento[i].querySelector('.nvDes input').value
+    if(nvtitulo.length < 10 || nvDes.length < 30 || porcmin < 0 || porcmin > 100){
+    alert('Preencha os dados corretamente');
+    break;
+  }else {
+    QuizzNivel ={
+      title: quizzTitulo,
+      image: quizzIMG,
+      questions: quizzQuestions,
+      levels:[
+      {
+        title: nvTitulo,
+        image: nvURL,
+        text: nvDes,
+        minValue: 0
+      },
+      {
+        title: nvTitulo,
+        image: nvURL,
+        text: nvDes,
+        minValue: 50
+      }
+    ]
+    
+  }
+
+}
+  quizzNivel.push(QuizzNivel)
+}
+  console.log(quizzNivel);
+}
+
 
 let noone
 
@@ -449,6 +530,8 @@ function comparador() {
 
 function Escolha(elemento) {
   elemento.classList.add("selecionado");
+  elemento.classList.remove("branco");
+}
   if (elemento.classList.contains("true")) {
     elemento.classList.add("correto");
   } else {
