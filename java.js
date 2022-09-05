@@ -7,8 +7,6 @@ function renderUserList (response) {
   userQuizzReal.innerHTML = ""
   console.log(listIdsQuizz)
   for (let i = 0; response.data.length > i; i++) {
-    console.log(response.data[i].id)
-    console.log(listIdsQuizz.includes(response.data[i].id))
     if( listIdsQuizz.includes(response.data[i].id)){
 
       let newQuizz = `<div onclick="RequisitarQuizz(${response.data[i].id})" data-identifier="quizz-card" class="quizz quizz${i}">
