@@ -2,13 +2,38 @@
 
 /* ===== list user quizz ===*/
 function renderUserList (response) {
-    
+    let zizyz = 0
+    const userQuizzReal = document.querySelector('.userQuizzRealReal')
+    userQuizzReal.innerHTML = ""
+    console.log(listIdsQuizz)
+    for (let i = 0; response.data.length > i; i++) {
+      console.log(response.data[i].id)
+      console.log(listIdsQuizz.includes(response.data[i].id))
+      if( listIdsQuizz.includes(response.data[i].id)){
+
+        let newQuizz = `<div onclick="RequisitarQuizz(${response.data[i].id})" data-identifier="quizz-card" class="quizz quizz${i}">
+        <p>${response.data[i].title}</p>
+        </div>`;
+        userQuizzReal.innerHTML = userQuizzReal.innerHTML + newQuizz;
+        let backGroundDiv = document.querySelector(`.quizz${i}`);
+        backGroundDiv.style.background = `linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%), url('${response.data[i].image}')`;
+        backGroundDiv.style.backgroundSize = "cover";
+        zizyz = 1
+      }
+    }
+    if(zizyz == 1){
+      const userQuizz = document.querySelector('.userQuizz')
+      userQuizz.classList.add('escondido')
+      const userPlus = document.querySelector('.userQuizzReal')
+      userPlus.classList.remove('escondido')
+    }
 }
 /*===== list all quizz ======*/
 const promisseList = axios.get(
   "https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes"
 );
 promisseList.then(renderList);
+promisseList.then(renderUserList)
 function renderList(response) {
   const divQuizz = document.querySelector(".allQuizzs");
   divQuizz.innerHTML = "";
@@ -298,7 +323,22 @@ function createQuizzObeject () {
   console.log(userQuizz)
   const promissseQuiz = axios.post('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes', userQuizz)
   promissseQuiz.then(console.log(promissseQuiz))
+  promissseQuiz.then(armazenarId)
 }
+
+
+function armazenarId (respotaid){
+  listIdsQuizz.push(respotaid.data.id)
+  console.log(listIdsQuizz)
+  const listIdsSerializado = JSON.stringify(listIdsQuizz); // Array convertida pra uma string
+
+  localStorage.setItem("lista", listIdsSerializado);
+}
+const listIdsSerializadooo = localStorage.getItem("lista"); // Pegando de volta a string armazenada na chave "lista"
+
+const listaIds = JSON.parse(listIdsSerializadooo)
+const listIdsQuizz = listaIds
+
 
 /*============== CANVAS2 ================ */
 
