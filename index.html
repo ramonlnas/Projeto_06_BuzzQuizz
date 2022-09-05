@@ -12,7 +12,7 @@
     <header>BuzzQuizz</header>
     <main>
       <div class="canvas1">
-        <div data-identifier="user-quizzes" class="userQuizz">
+        <div  class="userQuizz">
           <p>Você não criou nenhum</p>
           <p>quizz ainda :(</p>
           <button data-identifier="create-quizz" onclick="buttonCreate()">
@@ -22,9 +22,9 @@
         <div class="userQuizzReal escondido">
           <div>
             Seus Quizzes
-            <ion-icon onclick="buttonCreate()" name="add-circle"></ion-icon>
+            <ion-icon data-identifier="create-quizz" onclick="buttonCreate()" name="add-circle"></ion-icon>
           </div>
-          <div class="userQuizzRealReal"></div>
+          <div data-identifier="user-quizzes" class="userQuizzRealReal"></div>
         </div>
         <div data-identifier="general-quizzes" class="allQuizz">
           <p>Todos os Quizzes</p>
