@@ -290,12 +290,97 @@ main{
     width: 330px;
 }
 
+.selecionado{
+    filter: opacity(100%);
+}
+
 .correto{
     color: green;   
 }
 
+.errado{
+    color: red;
+}
+
 .branco{
     filter: opacity(50%);
+}
+
+.resultado{
+    background-color: #ffffff;
+    width: 759px;
+    height: 452px;
+    margin-top: 50px;
+}
+
+.header-result{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EC362D;
+    width: 727px;
+    height: 138px;
+    font-size: 23px;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    margin: 18px auto 0px auto;
+}
+
+.result-content{
+    display: flex;
+    margin-top: 41px;
+}
+
+.result-content img{
+    width: 364px;
+    height: 273px;
+    margin-left: 18px;
+    margin-right: 21px;
+}
+
+.result-content h2{
+    width: 328px;
+    height: 250px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 19px;
+    color: #484848;
+    word-break: break-word;
+    line-height: 25px;
+}
+
+.Reiniciar{
+    width: 260px;
+    height: 52px;
+    border: 1px #EC362D solid;
+    border-radius: 15px;
+    background-color: #EC362D;
+    margin: 57px auto 0 auto;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 21px;
+    color: #fff5f4;
+}
+
+.Reiniciar:hover{
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.Voltar{
+    width: 219px;
+    height: 44px;
+    color: #818181;
+    font-size: 21px;
+    margin: 16px auto 30px auto;
+    border: 0px;
+    background-color: #fafafa;
+}
+
+.Voltar:hover{
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 
@@ -343,11 +428,10 @@ main{
     font-family: 'Roboto';
     font-size: 21px;
     color: #FFF5F4;
-    margin-top: 85px;  
-     
+    margin: 80px auto     
 }
 
-.pergunta-compacta, .nivel-compactado .tela-perguntas, .tela-niveis, .tela-final, .quadro-final, .divisor{
+.pergunta-compacta, .nivel-compactado, .tela-perguntas, .tela-niveis, .tela-final, .quadro-final, .divisor{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -375,12 +459,13 @@ main{
     background: #FFFFFF;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
     padding: 20px;
+    margin-bottom: 24px;
 }
 
 .niveis {
     margin-bottom: 24px;
 }
-.niveis, .pergunta, .resposta-correta, .resposta-incorreta, .quadro-perguntas {
+.niveis, .perguntas, .resposta-correta, .resposta-incorreta, .quadro-perguntas {
     display: flex;
     flex-direction: column;
 }
