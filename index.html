@@ -11,87 +11,49 @@
   <body>
     <header>BuzzQuizz</header>
     <main>
-      <div class="canvas1 escondido">
-        <div class="userQuizz">
+      <div class="canvas1">
+        <div data-identifier="user-quizzes" class="userQuizz">
           <p>Você não criou nenhum</p>
           <p>quizz ainda :(</p>
-          <button onclick="buttonCreate()">Criar Quizz</button>
+          <button data-identifier="create-quizz" onclick="buttonCreate()">
+            Criar Quizz
+          </button>
         </div>
-        <div class="allQuizz">
+        <div data-identifier="general-quizzes" class="allQuizz">
           <p>Todos os Quizzes</p>
           <div class="allQuizzs">
-            <div class="quizz">
-              <p>Todos os simpnsons ddd ddddd dddddd dddddddd</p>
+            <div class="spinner">
+              <div class="loadingio-spinner-spinner-xm4ajdssgn8">
+                <div class="ldio-g4dxxs0irlv">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div class="canvas2 escondido">
         <div class="header-quizz">
-          <img
-            src="https://guiadoestudante.abril.com.br/wp-content/uploads/sites/4/2010/11/Hogwarts.jpeg"
-            alt="A imagem nao carregou"
-          />
+          <img src="" alt="A imagem nao carregou" />
           <h1>O quão potterhead vc é?</h1>
         </div>
-        <div class="pergunta-quizz">
-          <div class="controle">
-            <div class="pergunta">
-              <h1>Em qual animal olho-tonto transfigurou malfoy?</h1>
-            </div>
-            <div class="respostas">
-              <div>
-                <img
-                  src="https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=90&strip=info&w=1024&resize=1200,800"
-                  alt="Imagem não carregou"
-                  class="imgrespostas"
-                />
-                <h1 class="txtresposta">Gato</h1>
-              </div>
-              <div>
-                <img
-                  src="https://static.nationalgeographicbrasil.com/files/styles/image_3200/public/01-rat-friends-nationalgeographic_1162144.jpg?w=1600&h=900"
-                  alt="Imagem não carregou"
-                  class="imgrespostas"
-                />
-                <h1 class="txtresposta">Rato</h1>
-              </div>
-              <div>
-                <img
-                  src="https://www.infoescola.com/wp-content/uploads/2008/06/fur%C3%A3o_138806276.jpg"
-                  alt="Imagem não carregou"
-                  class="imgrespostas"
-                />
-                <h1 class="txtresposta">Furão</h1>
-              </div>
-              <div>
-                <img
-                  src="https://s3-alpha-sig.figma.com/img/c7e0/64f3/0145b79667e2e9f0f8193b64984531af?Expires=1662940800&Signature=WosEwYFMdhO3Xpkx8zEhg2ebmbCh78MXu9TADsLnwWWkmnhqLbhb0A5pMt3Z38IWY9e-CP7Nqcy58glmtRSxfBnrbicT50WiOIaE2fAQXE774P-CrJ4r8OKmH9a~2-RFUaHMt7F5m5hrb0toabzjJsHoxYTRerUjPTZF1ab0vuCSsJpBb5~qwiuR3~wGoOf~l04UywVQ0RA3wmSxn8EbCEcNVr7vdnDutMsyojZFY6sa6YZxZKWzA9PHaBiTbmB04tFK1je3LH5pZPV45glEZQQp5rBstybseNSMydeD9IU0wF~SzfN9FeIioHWQKVN50xLZAIyUXuaQyrXUVo~jjQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
-                  alt="Imagem não carregou"
-                  class="imgrespostas"
-                />
-                <h1 class="txtresposta">Sapo</h1>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="pergunta-quizz">
-          <div class="controle">
-            <div class="pergunta"></div>
-            <div class="respostas"></div>
-          </div>
-        </div>
       </div>
-        <div class="canvas3">
-
+      <div class="canvas3 escondido">
             <!--Tela 3.1-->
             <div class="tela-inicial">
                 <h1>Comece pelo começo</h1>
                 <div class="quadro-quizz">
-                    <input type="text" minlength="20" maxlength="65" class="criar-quizz" placeholder="Título do seu quizz" /> 
-                    <input type="url" class="criar-quizz" placeholder="URL da imagem do seu quizz" /> 
-                    <input type="text" class="criar-quizz" minlength="3" placeholder="Quantidade de perguntas do seu quizz" /> 
-                    <input type="text" class="criar-quizz" minlength="2" placeholder="Quantidade de níveis do quizz" /> 
                 </div>
 
                 <button onclick="proximaTela()">Prosseguir pra criar perguntas</button>
@@ -104,7 +66,7 @@
             <!--TELA 3.3-->
 
             <div class="tela-niveis escondido">
-                <h1>Agora, decida os níveis</h1>
+                
 
                 <div class="nivel-compactado">
 
@@ -130,40 +92,8 @@
 
                     
                     <div class="niveis">
-                        <h2>Nível 1</h2>
-                        <input type="text" class="nvTitulo" minlength="10" placeholder="Título do nível" /> 
-                        <input type="text"  class="%minima" maxlength="100" placeholder="% de acerto mínima" /> 
-                        <input type="url" class="nvURL" placeholder="URL da imagem do nível" /> 
-                        <input type="text" class="nvDes" placeholder="Descrição do nível" /> 
-
-
                     </div>
-
-                    
-                    <div class="niveis">
-                        <h2>Nível 2</h2>
-                        <input type="text" placeholder="Título do nível" /> 
-                        <input type="text" placeholder="% de acerto mínima" /> 
-                        <input type="text" placeholder="URL da imagem do nível" /> 
-                        <input type="text" placeholder="Descrição do nível" /> 
-
-
-                    </div>
-                    
-                    
-                    <div class="niveis">
-                        <h2>Nível 3</h2>
-                        <input type="text" placeholder="Título do nível" /> 
-                        <input type="text" placeholder="% de acerto mínima" /> 
-                        <input type="text" placeholder="URL da imagem do nível" /> 
-                        <input type="text" placeholder="Descrição do nível" /> 
-
-
-                    </div>
-
                     <button onclick="proximaTela2()">Finalizar Quizz</button>
-                    
-                    
                     
                 </div>
             </div>
@@ -183,12 +113,56 @@
                 </div>
 
             </div>
+          <button onclick="proximaTela()">Prosseguir pra criar perguntas</button>
+      </div>
 
+      <!--Tela 3.2-->
+      <div class="tela-perguntas escondido">
+      </div>
 
+      <!--TELA 3.3-->
+
+      <div class="tela-niveis escondido">
+          <div class="quadro-niveis">    
+            </div>  
         </div>
+
+          <div class="nivel-compactado">
+
+              
+            <div class="pergunta-compactada-1">
+            </div>
+
+
+              <button onclick="proximaTela2()">Finalizar Quizz</button>
+          </div>
+
+          
+      </div>
+
+      <div class="tela-final escondido">
+          <h1>Seu Quizz está pronto!</h1>
+
+          <div class="quadro-final">
+              <div class="img-final">
+                  <img class="img-relative" src="Rectangle 34.png" />
+                  <h3 class ="txt-final" >O quão Potterhead é você?</h3>
+              </div>
+
+              <button onclick="">Acessar Quizz</button>
+              
+              <p>Voltar para o home</p>
+          </div>
+      </div>
     </main>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./java.js"></script>
   </body>
