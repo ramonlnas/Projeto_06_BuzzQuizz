@@ -343,11 +343,10 @@ main{
     font-family: 'Roboto';
     font-size: 21px;
     color: #FFF5F4;
-    margin-top: 85px;  
-     
+    margin: 80px auto     
 }
 
-.pergunta-compacta, .nivel-compactado .tela-perguntas, .tela-niveis, .tela-final, .quadro-final, .divisor{
+.pergunta-compacta, .nivel-compactado, .tela-perguntas, .tela-niveis, .tela-final, .quadro-final, .divisor{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -375,12 +374,13 @@ main{
     background: #FFFFFF;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
     padding: 20px;
+    margin-bottom: 24px;
 }
 
 .niveis {
     margin-bottom: 24px;
 }
-.niveis, .pergunta, .resposta-correta, .resposta-incorreta, .quadro-perguntas {
+.niveis, .perguntas, .resposta-correta, .resposta-incorreta, .quadro-perguntas {
     display: flex;
     flex-direction: column;
 }
