@@ -89,9 +89,15 @@ function ListarPerguntas(resposta) {
       `.question${i} .controle .respostas`
     );
     console.log(arearesposta);
+    let verdadeiro = "";
     for (let i = 0; i < QuestoesRespostas.length; i++) {
+      console.log(QuestoesRespostas[i].isCorrectAnswer);
+      if(QuestoesRespostas[i].isCorrectAnswer === true){
+        verdadeiro = QuestoesRespostas[i].isCorrectAnswer;
+        console.log(verdadeiro);
+      }
       let TemplateRespostas = `
-      <div class="resposta${i}" onclick="Verificar(this)">
+      <div class="resposta${i} ${verdadeiro}" onclick="Verificar(this)">
         <img
         src="${QuestoesRespostas[i].image}"
         alt="Imagem não carregou"
@@ -111,25 +117,11 @@ function comparador() {
 
 function Verificar(elemento) {
   console.log(elemento);
-  console.log(elemento.closest("div div"));
-  const teste = elemento.parentNode.parentNode.parentNode;
-  const teste3 = teste.children;
-  console.log(teste3);
-  console.log(teste);
-  const teste2 = elemento.parentNode.children;
-  // let tentativa = document.querySelector(elemento.parentNode.children);
-  // console.log(tentativa);
-  // teste2.classList.add("branco");
-  console.log(teste2);
-  let controlador = teste3.classList.item[0];
-  console.log(controlador);
-  for (let i = 0; i < teste2.length; i++) {
-    const divis = document.querySelector(`.resposta${i}`);
-    divis.classList.remove(`resposta${i}`);
-    console.log(divis);
-    divis.classList.add("branco");
+  console.log(elemento.parentNode);
+  let teste = document.querySelector(".true");
+  if(teste.classList.contains("true")){
+    teste.classList.add("selecionado");
   }
-  elemento.classList.add("selecionado");
-  elemento.classList.remove("branco");
 }
-RequisitarQuizz();
+
+RequisitarQuizz(10080);
