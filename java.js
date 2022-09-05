@@ -1,8 +1,4 @@
 /*========Canvas1 ===========*/
-const listIdsSerializadooo = localStorage.getItem("lista"); // Pegando de volta a string armazenada na chave "lista"
-const listIdsQuizz = []
-const listaIds = JSON.parse(listIdsSerializadooo)
-listIdsQuizz = listaIds
 
 /* ===== list user quizz ===*/
 function renderUserList (response) {
@@ -332,13 +328,16 @@ promissseQuiz.then(armazenarId)
 
 
 function armazenarId (respotaid){
-  listIdsQuizz.push(respotaid.data.id)
-  console.log(listIdsQuizz)
-  const listIdsSerializado = JSON.stringify(listIdsQuizz); // Array convertida pra uma string
+listIdsQuizz.push(respotaid.data.id)
+console.log(listIdsQuizz)
+const listIdsSerializado = JSON.stringify(listIdsQuizz); // Array convertida pra uma string
 
-  localStorage.setItem("lista", listIdsSerializado);
+localStorage.setItem("lista", listIdsSerializado);
 }
+const listIdsSerializadooo = localStorage.getItem("lista"); // Pegando de volta a string armazenada na chave "lista"
 
+const listaIds = JSON.parse(listIdsSerializadooo)
+const listIdsQuizz = listaIds
 
 
 /*============== CANVAS2 ================ */
