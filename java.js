@@ -7,7 +7,7 @@ function renderUserList (response) {
   userQuizzReal.innerHTML = ""
   console.log(listIdsQuizz)
   for (let i = 0; response.data.length > i; i++) {
-    if( listIdsQuizz.includes(response.data[i].id)){
+    if( listIdsQuizz[0].includes(response.data[i].id)){
 
       let newQuizz = `<div onclick="RequisitarQuizz(${response.data[i].id})" data-identifier="quizz-card" class="quizz quizz${i}">
       <p>${response.data[i].title}</p>
@@ -323,7 +323,7 @@ const promissseQuiz = axios.post('https://mock-api.driven.com.br/api/v4/buzzquiz
 promissseQuiz.then(console.log(promissseQuiz))
 promissseQuiz.then(armazenarId)
 }
-
+const listIdsQuizz = []
 
 function armazenarId (respotaid){
 listIdsQuizz.push(respotaid.data.id)
@@ -335,7 +335,8 @@ localStorage.setItem("lista", listIdsSerializado);
 const listIdsSerializadooo = localStorage.getItem("lista"); // Pegando de volta a string armazenada na chave "lista"
 
 const listaIds = JSON.parse(listIdsSerializadooo)
-const listIdsQuizz = listaIds
+listIdsQuizz.push(listaIds)
+ 
 
 
 /*============== CANVAS2 ================ */
