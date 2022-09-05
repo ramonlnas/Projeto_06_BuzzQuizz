@@ -348,6 +348,10 @@ main{
     margin: 18px auto 0px auto;
 }
 
+.header-result h1{
+    word-break: break-word;
+}
+
 .result-content{
     display: flex;
     margin-top: 41px;
@@ -536,4 +540,44 @@ main{
     .quizz {
         margin-right: 0px;
     }
-}
+
+    .canvas2, .perguntas-quizz, .pergunta, .resultado{
+        width: 100%;
+    }
+
+    .header-result{
+        width: 90%;
+    }
+
+    .header-result{
+        word-break: break-word;
+    }
+
+    .perguntas-quizz, .resultado{
+        height: auto;
+    }
+
+    .result-content{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .result-content h2{
+        margin-top: 9px;
+    }
+
+    .imgrespostas{
+        width: 163px;
+        height: 113px;
+    }
+
+    .txtresposta{
+        width: 163px;
+        word-break: break-word;
+    }
+
+    .result-content img{
+        width: 90%;
+        height: 273px;
+    }
+}   
